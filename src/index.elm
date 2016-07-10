@@ -1,8 +1,8 @@
-module Index where
+module Index exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import StartApp.Simple as StartApp
+import Html.App as App
 
 -- Model
 
@@ -21,12 +21,12 @@ newEntry text id =
   }
 -- Update
 
-type Action
+type Msg
   = NoOp
   | Delete Int
 
-update action model =
-  case action of
+update msg model =
+  case msg of
     NoOp ->
       model
 
@@ -58,7 +58,7 @@ entryList entries =
   ul [ ] (List.map entryItem entries)
 
 
-view address model =
+view model =
   div [ class "container" ]
    [ div [ class "row" ] [ pageHeader,
   --   entryList model.entries,
@@ -67,7 +67,7 @@ view address model =
 
 -- main
 main =
-  StartApp.start
+  App.beginnerProgram
     { model = initialModel,
       view = view,
       update = update
