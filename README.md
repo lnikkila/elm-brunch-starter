@@ -21,7 +21,7 @@ http://elm-brunch-starter.aerobatic.io
 ## Use
 Type the command below to clone this repo to your own app:
 
-`brunch new gh:ivanoats/elm-brunch-starter APPNAME`
+`brunch new APPNAME -s gh:ivanoats/elm-brunch-starter`
 
 Replace APPNAME with whatever makes sense for you.
 
